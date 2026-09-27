@@ -59,7 +59,7 @@ export default defineConfig(async (merge) => {
       }
     },
     h5: {
-      publicPath: '/',
+      publicPath: './',
       staticDirectory: 'static',
       html: {
         template: 'src/index.html'
