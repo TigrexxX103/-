@@ -1,0 +1,26 @@
+@use '@/styles/variables.scss' as *;
+
+page {
+  background-color: $color-bg-page;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft Yahei', sans-serif;
+  font-size: $font-size-base;
+  color: $color-text-primary;
+  -webkit-font-smoothing: antialiased;
+}
+
+view,
+text,
+image,
+button,
+input,
+scroll-view,
+swiper,
+swiper-item {
+  box-sizing: border-box;
+}
+
+button {
+  @include button-reset;
+}

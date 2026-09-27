@@ -1,0 +1,202 @@
+﻿@use '../../styles/variables.scss' as *;
+
+.harvestPage {
+  min-height: 100vh;
+  background-color: $color-bg-page;
+  padding-bottom: 40rpx;
+}
+
+// 待处理提示
+.pendingBanner {
+  margin: $spacing-md $spacing-lg;
+  padding: $spacing-lg;
+  background: linear-gradient(135deg, $color-secondary 0%, $color-price 100%);
+  border-radius: $radius-lg;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.pendingIcon {
+  width: 80rpx;
+  height: 80rpx;
+  @include flex-center;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: $radius-md;
+  font-size: 40rpx;
+  flex-shrink: 0;
+}
+
+.pendingContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.pendingTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-white;
+  margin-bottom: $spacing-xs;
+}
+
+.pendingDesc {
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.pendingBtn {
+  padding: $spacing-xs $spacing-md;
+  background-color: $color-text-white;
+  border-radius: $radius-round;
+  flex-shrink: 0;
+}
+
+.pendingBtnText {
+  font-size: $font-size-sm;
+  color: $color-price;
+  font-weight: $font-weight-medium;
+  white-space: nowrap;
+}
+
+// 收获统计
+.statsSection {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-md;
+  padding: 0 $spacing-lg $spacing-md;
+}
+
+.statCard {
+  flex: 1;
+  @include card-base;
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.statValue {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+}
+
+.statLabel {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+// 收获列表
+.harvestList {
+  padding: 0 $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.harvestItem {
+  @include card-base;
+  padding: $spacing-md;
+}
+
+.harvestHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-sm;
+}
+
+.harvestCrop {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+}
+
+.harvestStatus {
+  padding: 4rpx 16rpx;
+  border-radius: $radius-xs;
+  font-size: $font-size-xs;
+  white-space: nowrap;
+}
+
+.statusPending {
+  background-color: $color-tag-hot-bg;
+  color: $color-tag-hot-text;
+}
+
+.statusMailed {
+  background-color: $color-tag-bg;
+  color: $color-tag-text;
+}
+
+.statusPickup {
+  background-color: $color-tag-new-bg;
+  color: $color-tag-new-text;
+}
+
+.harvestInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-md;
+  padding-top: $spacing-sm;
+  border-top: 1rpx solid $color-border-light;
+}
+
+.harvestInfoItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rpx;
+}
+
+.harvestInfoIcon {
+  font-size: $font-size-xs;
+}
+
+.harvestInfoText {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.harvestAction {
+  margin-top: $spacing-md;
+  padding: $spacing-sm 0;
+  border-top: 1rpx solid $color-border-light;
+}
+
+.harvestActionBtn {
+  height: $button-height-sm;
+  @include flex-center;
+  border-radius: $radius-button;
+  background: $color-primary-gradient;
+}
+
+.harvestActionText {
+  font-size: $font-size-sm;
+  color: $color-text-white;
+  font-weight: $font-weight-medium;
+}
+
+// 空状态
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-xxl;
+  gap: $spacing-md;
+}
+
+.emptyIcon {
+  font-size: 80rpx;
+}
+
+.emptyText {
+  font-size: $font-size-base;
+  color: $color-text-tertiary;
+}

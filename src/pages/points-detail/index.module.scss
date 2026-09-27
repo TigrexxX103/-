@@ -1,0 +1,117 @@
+﻿@use '../../styles/variables.scss' as *;
+
+.pointsPage {
+  min-height: 100vh;
+  background-color: $color-bg-page;
+  padding-bottom: 40rpx;
+}
+
+.pointsHeader {
+  background: linear-gradient(135deg, #FF9800 0%, #FF6B35 100%);
+  padding: $spacing-xl $spacing-lg;
+  padding-top: calc($spacing-xl + env(safe-area-inset-top));
+  border-radius: 0 0 $radius-xl $radius-xl;
+  text-align: center;
+  margin-bottom: $spacing-md;
+}
+
+.pointsLabel {
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: $spacing-xs;
+}
+
+.pointsValue {
+  font-size: 64rpx;
+  font-weight: $font-weight-semibold;
+  color: $color-text-white;
+}
+
+.pointsTip {
+  font-size: $font-size-xs;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: $spacing-xs;
+}
+
+.recordList {
+  padding: 0 $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.recordItem {
+  @include card-base;
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.recordIcon {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: $radius-md;
+  @include flex-center;
+  font-size: 36rpx;
+  flex-shrink: 0;
+}
+
+.earnIcon {
+  background-color: $color-primary-light;
+}
+
+.spendIcon {
+  background-color: $color-price-light;
+}
+
+.recordInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.recordDesc {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.recordTime {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-top: 4rpx;
+}
+
+.recordAmount {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  white-space: nowrap;
+}
+
+.amountEarn {
+  color: $color-success;
+}
+
+.amountSpend {
+  color: $color-price;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-xxl;
+  gap: $spacing-md;
+}
+
+.emptyIcon {
+  font-size: 80rpx;
+}
+
+.emptyText {
+  font-size: $font-size-base;
+  color: $color-text-tertiary;
+}

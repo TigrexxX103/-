@@ -1,0 +1,32 @@
+graph TD
+    Home[首页] -->|地块卡片| LandDetail[地块详情]
+    Home -->|日记图片| PhotoViewer[图片查看器]
+    Home -->|快捷入口| Adopt[认养 Tab]
+    Home -->|快捷入口| Discover[发现 Tab]
+    
+    Discover -->|内容卡片| ActivityDetail[活动详情]
+    Discover -->|积分商品| ProductDetail[商品详情]
+    
+    Adopt -->|地块卡片| LandDetail
+    Adopt -->|农场卡片| FarmHome[农场主页]
+    
+    LandDetail -->|立即认养| AdoptConfirm[认养确认]
+    AdoptConfirm -->|支付| PayResult[支付结果]
+    PayResult -->|查看证书| Certificate[电子证书]
+    
+    Profile[我的] -->|我的地块| MyLands[我的地块]
+    Profile -->|我的订单| OrderList[订单列表]
+    Profile -->|我的活动| MyActivities[我的活动]
+    Profile -->|积分商城| PointsDetail[积分明细]
+    Profile -->|设置| Settings[设置]
+    Profile -->|农场入驻| FarmHome
+    
+    MyLands -->|长势监控| Monitor[长势监控]
+    Monitor -->|查看图片| PhotoViewer
+    MyLands -->|收获管理| Harvest[收获管理]
+    
+    ActivityDetail -->|立即报名| ActivityBooking[活动报名]
+    ActivityBooking -->|我的活动| MyActivities
+    
+    FarmHome -->|地块| LandDetail
+    FarmHome -->|活动| ActivityDetail

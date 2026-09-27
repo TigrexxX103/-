@@ -1,0 +1,103 @@
+﻿@use '../../styles/variables.scss' as *;
+
+.diaryCard {
+  @include card-base;
+  padding: $spacing-md;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-sm;
+}
+
+.avatar {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: $radius-round;
+  flex-shrink: 0;
+}
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+  flex: 1;
+}
+
+.publisherName {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+}
+
+.createTime {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.content {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  line-height: 1.6;
+  margin-bottom: $spacing-sm;
+  @include text-ellipsis-multi(3);
+}
+
+.imageGrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-sm;
+}
+
+.imageGridSingle {
+  flex-direction: column;
+}
+
+.imageGridDouble {
+  flex-direction: row;
+}
+
+.diaryImage {
+  width: calc((100% - 16rpx) / 3);
+  height: 200rpx;
+  border-radius: $radius-sm;
+}
+
+.diaryImageSingle {
+  width: 100%;
+  height: 400rpx;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-xl;
+  padding-top: $spacing-sm;
+  border-top: 1rpx solid $color-border-light;
+}
+
+.actionItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.actionIcon {
+  font-size: $font-size-base;
+}
+
+.actionIconActive {
+  color: $color-error;
+}
+
+.actionText {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}

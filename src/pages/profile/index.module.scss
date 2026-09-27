@@ -1,0 +1,245 @@
+﻿@use '../../styles/variables.scss' as *;
+
+.profilePage {
+  min-height: 100vh;
+  background-color: $color-bg-page;
+  padding-bottom: 40rpx;
+}
+
+// 用户信息区
+.userSection {
+  background: linear-gradient(135deg, $color-primary 0%, $color-accent 100%);
+  padding: $spacing-xl $spacing-lg $spacing-lg;
+  padding-top: calc($spacing-xl + env(safe-area-inset-top));
+  border-radius: 0 0 $radius-xl $radius-xl;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.userAvatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: $radius-round;
+  border: 4rpx solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.userDetail {
+  flex: 1;
+  min-width: 0;
+}
+
+.userNameRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-xs;
+}
+
+.userName {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-white;
+  @include text-ellipsis;
+}
+
+.certBadge {
+  padding: 4rpx 12rpx;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: $radius-xs;
+  white-space: nowrap;
+}
+
+.certText {
+  font-size: $font-size-xs;
+  color: $color-text-white;
+}
+
+.userBio {
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.85);
+  @include text-ellipsis;
+}
+
+.editBtn {
+  padding: $spacing-xs $spacing-md;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: $radius-round;
+  flex-shrink: 0;
+}
+
+.editText {
+  font-size: $font-size-sm;
+  color: $color-text-white;
+  white-space: nowrap;
+}
+
+// 数据统计
+.statsCard {
+  background-color: $color-bg-card;
+  margin: -$spacing-lg $spacing-lg 0;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: row;
+  box-shadow: $shadow-card;
+  position: relative;
+  z-index: 10;
+}
+
+.statItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+  position: relative;
+}
+
+.statItem:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rpx;
+  height: 60rpx;
+  background-color: $color-border-light;
+}
+
+.statValue {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.statLabel {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+// 核心入口网格
+.entryGrid {
+  background-color: $color-bg-card;
+  margin: $spacing-lg;
+  border-radius: $radius-lg;
+  padding: $spacing-lg $spacing-md;
+  box-shadow: $shadow-card;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.entryItem {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-sm 0;
+}
+
+.entryIcon {
+  width: 80rpx;
+  height: 80rpx;
+  @include flex-center;
+  background-color: $color-primary-light;
+  border-radius: $radius-md;
+  font-size: 40rpx;
+}
+
+.entryIconOrder {
+  background-color: #FFF3E0;
+}
+
+.entryIconActivity {
+  background-color: #E3F2FD;
+}
+
+.entryIconPoints {
+  background-color: #F3E5F5;
+}
+
+.entryIconFav {
+  background-color: #FCE4EC;
+}
+
+.entryIconDiary {
+  background-color: #E8F5E9;
+}
+
+.entryIconFarm {
+  background-color: #FFF8E1;
+}
+
+.entryIconSettings {
+  background-color: #F5F5F5;
+}
+
+.entryText {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  text-align: center;
+}
+
+// 最近动态
+.recentSection {
+  background-color: $color-bg-card;
+  margin: 0 $spacing-lg $spacing-lg;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.recentHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-sm;
+}
+
+.recentTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.recentMore {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.recentItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm 0;
+}
+
+.recentIcon {
+  font-size: 32rpx;
+}
+
+.recentContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.recentText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  @include text-ellipsis;
+}
+
+.recentTime {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}

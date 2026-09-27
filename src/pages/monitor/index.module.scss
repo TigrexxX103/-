@@ -1,0 +1,286 @@
+﻿@use '../../styles/variables.scss' as *;
+
+.monitorPage {
+  min-height: 100vh;
+  background-color: $color-bg-page;
+  padding-bottom: 40rpx;
+}
+
+// 当前生长阶段大卡片
+.stageCard {
+  background: linear-gradient(135deg, $color-primary 0%, $color-accent 100%);
+  padding: $spacing-xl $spacing-lg;
+  padding-top: calc($spacing-xl + env(safe-area-inset-top));
+  border-radius: 0 0 $radius-xl $radius-xl;
+  position: relative;
+  overflow: hidden;
+}
+
+.stageDecoration {
+  position: absolute;
+  font-size: 200rpx;
+  opacity: 0.15;
+  right: -40rpx;
+  bottom: -40rpx;
+}
+
+.stageLabel {
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: $spacing-xs;
+}
+
+.stageName {
+  font-size: 48rpx;
+  font-weight: $font-weight-semibold;
+  color: $color-text-white;
+  margin-bottom: $spacing-sm;
+}
+
+.stageDesc {
+  font-size: $font-size-base;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  margin-bottom: $spacing-md;
+}
+
+.stageCountdown {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-xs $spacing-md;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: $radius-round;
+}
+
+.countdownText {
+  font-size: $font-size-sm;
+  color: $color-text-white;
+}
+
+.countdownNumber {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-white;
+}
+
+// 互动区
+.interactSection {
+  background-color: $color-bg-card;
+  margin: -$spacing-lg $spacing-lg $spacing-md;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-md;
+  box-shadow: $shadow-card;
+  position: relative;
+  z-index: 10;
+}
+
+.interactBtn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-md;
+  border-radius: $radius-md;
+  background-color: $color-bg-page;
+  transition: all 0.2s ease;
+
+  &.active {
+    background-color: $color-primary-light;
+  }
+}
+
+.interactIcon {
+  font-size: 48rpx;
+}
+
+.interactLabel {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.interactStatus {
+  font-size: $font-size-xs;
+  color: $color-primary;
+}
+
+// 生长时间轴
+.timelineSection {
+  background-color: $color-bg-card;
+  margin: 0 $spacing-lg $spacing-md;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+}
+
+.sectionTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+}
+
+.growthTimeline {
+  position: relative;
+  padding-left: $spacing-lg;
+}
+
+.timelineLine {
+  position: absolute;
+  left: 16rpx;
+  top: 8rpx;
+  bottom: 8rpx;
+  width: 4rpx;
+  background-color: $color-primary-light;
+}
+
+.growthItem {
+  position: relative;
+  padding-bottom: $spacing-lg;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.timelineDot {
+  position: absolute;
+  left: -$spacing-lg + 4rpx;
+  top: 8rpx;
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: $radius-round;
+  background-color: $color-primary;
+  border: 4rpx solid $color-bg-card;
+  box-shadow: 0 0 0 4rpx $color-primary-light;
+}
+
+.growthDate {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-bottom: $spacing-xs;
+}
+
+.growthStageName {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.growthDesc {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: 1.5;
+  margin-bottom: $spacing-sm;
+}
+
+.growthImages {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xs;
+}
+
+.growthImage {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: $radius-sm;
+}
+
+// 留言区
+.messageSection {
+  background-color: $color-bg-card;
+  margin: 0 $spacing-lg $spacing-md;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+}
+
+.messageInputWrap {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+}
+
+.messageInput {
+  flex: 1;
+  height: 72rpx;
+  padding: 0 $spacing-md;
+  border: 2rpx solid $color-border;
+  border-radius: $radius-round;
+  font-size: $font-size-base;
+  color: $color-text-primary;
+  background-color: $color-bg-page;
+}
+
+.sendBtn {
+  width: 120rpx;
+  height: 72rpx;
+  @include flex-center;
+  border-radius: $radius-round;
+  background: $color-primary-gradient;
+}
+
+.sendBtnText {
+  font-size: $font-size-sm;
+  color: $color-text-white;
+}
+
+.messageList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.messageItem {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-sm;
+}
+
+.messageAvatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: $radius-round;
+  flex-shrink: 0;
+}
+
+.messageBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.messageHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-xs;
+}
+
+.messageName {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+}
+
+.messageTime {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.messageBubble {
+  background-color: $color-bg-page;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-md;
+}
+
+.messageText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: 1.5;
+}

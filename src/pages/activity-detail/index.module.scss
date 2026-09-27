@@ -1,0 +1,161 @@
+﻿@use '../../styles/variables.scss' as *;
+
+.activityDetailPage {
+  min-height: 100vh;
+  background-color: $color-bg-page;
+  padding-bottom: 140rpx;
+}
+
+.activityImage {
+  width: 100%;
+  height: 400rpx;
+  display: block;
+}
+
+.activityInfo {
+  @include card-base;
+  margin: -$spacing-lg $spacing-lg $spacing-md;
+  padding: $spacing-lg;
+  position: relative;
+  z-index: 10;
+}
+
+.activityTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+}
+
+.tagRow {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-md;
+}
+
+.activityTag {
+  padding: 4rpx 16rpx;
+  background-color: $color-tag-bg;
+  border-radius: $radius-xs;
+  font-size: $font-size-xs;
+  color: $color-tag-text;
+  white-space: nowrap;
+}
+
+.metaList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  padding-top: $spacing-md;
+  border-top: 1rpx solid $color-border-light;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.metaIcon {
+  font-size: 32rpx;
+}
+
+.metaText {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+}
+
+.section {
+  @include card-base;
+  margin: 0 $spacing-lg $spacing-md;
+  padding: $spacing-lg;
+}
+
+.sectionTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+}
+
+.sectionContent {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  line-height: 1.6;
+}
+
+.quotaWrap {
+  margin-top: $spacing-md;
+}
+
+.quotaLabel {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-bottom: $spacing-xs;
+  display: block;
+}
+
+.quotaBar {
+  width: 100%;
+  height: 12rpx;
+  background-color: $color-border-light;
+  border-radius: $radius-round;
+  overflow: hidden;
+}
+
+.quotaFill {
+  height: 100%;
+  background: $color-primary-gradient;
+  border-radius: $radius-round;
+}
+
+// 底部操作栏
+.bottomBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-bg-card;
+  box-shadow: $shadow-float;
+  padding: $spacing-sm $spacing-lg;
+  padding-bottom: calc($spacing-sm + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-md;
+  z-index: 100;
+}
+
+.priceInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.priceLabel {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.priceValue {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-price;
+}
+
+.bookBtn {
+  flex: 1;
+  height: $button-height-lg;
+  @include flex-center;
+  border-radius: $radius-button;
+  background: $color-primary-gradient;
+}
+
+.bookBtnText {
+  font-size: $font-size-md;
+  color: $color-text-white;
+  font-weight: $font-weight-semibold;
+}

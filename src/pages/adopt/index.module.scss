@@ -1,0 +1,269 @@
+﻿@use '../../styles/variables.scss' as *;
+
+.adoptPage {
+  min-height: 100vh;
+  background-color: $color-bg-page;
+  padding-bottom: 120rpx;
+}
+
+// 顶部栏
+.headerBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-md $spacing-lg;
+  padding-top: calc($spacing-md + env(safe-area-inset-top));
+  background-color: $color-bg-card;
+}
+
+.headerTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.headerBell {
+  width: 64rpx;
+  height: 64rpx;
+  @include flex-center;
+  position: relative;
+}
+
+.bellIcon {
+  font-size: 36rpx;
+}
+
+.bellDot {
+  position: absolute;
+  top: 12rpx;
+  right: 12rpx;
+  width: 16rpx;
+  height: 16rpx;
+  background-color: $color-error;
+  border-radius: $radius-round;
+  border: 2rpx solid $color-bg-card;
+}
+
+// 筛选栏
+.filterBar {
+  background-color: $color-bg-card;
+  padding: $spacing-sm $spacing-lg;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-sm;
+  border-bottom: 1rpx solid $color-border-light;
+}
+
+.filterScroll {
+  flex: 1;
+  @include scroll-x-container;
+}
+
+.filterTab {
+  display: inline-block;
+  padding: $spacing-xs $spacing-md;
+  margin-right: $spacing-sm;
+  border-radius: $radius-round;
+  background-color: $color-bg-page;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  white-space: nowrap;
+
+  &.active {
+    background-color: $color-primary;
+    color: $color-text-white;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.sortBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rpx;
+  padding: $spacing-xs $spacing-sm;
+  flex-shrink: 0;
+}
+
+.sortText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.filterBtn {
+  width: 56rpx;
+  height: 56rpx;
+  @include flex-center;
+  flex-shrink: 0;
+}
+
+.filterIcon {
+  font-size: 32rpx;
+  color: $color-text-secondary;
+}
+
+// 地块列表
+.landList {
+  padding: $spacing-md $spacing-lg;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+}
+
+.landItem {
+  width: calc((100% - 24rpx) / 2);
+}
+
+// 空状态
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-xxl;
+  gap: $spacing-md;
+}
+
+.emptyIcon {
+  font-size: 80rpx;
+}
+
+.emptyText {
+  font-size: $font-size-base;
+  color: $color-text-tertiary;
+}
+
+// 地图模式悬浮按钮
+.mapBtn {
+  position: fixed;
+  right: $spacing-lg;
+  bottom: calc(120rpx + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-sm $spacing-md;
+  background-color: $color-primary;
+  border-radius: $radius-round;
+  box-shadow: $shadow-float;
+  z-index: 100;
+}
+
+.mapIcon {
+  font-size: 28rpx;
+}
+
+.mapText {
+  font-size: $font-size-sm;
+  color: $color-text-white;
+  font-weight: $font-weight-medium;
+}
+
+// 筛选面板
+.filterMask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+}
+
+.filterPanel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-bg-card;
+  border-radius: $radius-xl $radius-xl 0 0;
+  padding: $spacing-lg;
+  padding-bottom: calc($spacing-lg + env(safe-area-inset-bottom));
+  z-index: 201;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.panelHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-lg;
+}
+
+.panelTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.panelClose {
+  font-size: 40rpx;
+  color: $color-text-tertiary;
+  padding: $spacing-xs;
+}
+
+.panelSection {
+  margin-bottom: $spacing-lg;
+}
+
+.sectionLabel {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+  display: block;
+}
+
+.optionList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+.optionItem {
+  padding: $spacing-xs $spacing-md;
+  border-radius: $radius-round;
+  background-color: $color-bg-page;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+
+  &.active {
+    background-color: $color-primary-light;
+    color: $color-primary;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.panelFooter {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-md;
+  margin-top: $spacing-lg;
+}
+
+.resetBtn {
+  flex: 1;
+  height: $button-height-md;
+  @include flex-center;
+  border-radius: $radius-button;
+  background-color: $color-bg-page;
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+}
+
+.confirmBtn {
+  flex: 2;
+  height: $button-height-md;
+  @include flex-center;
+  border-radius: $radius-button;
+  background: $color-primary-gradient;
+  font-size: $font-size-base;
+  color: $color-text-white;
+  font-weight: $font-weight-medium;
+}

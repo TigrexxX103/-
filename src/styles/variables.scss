@@ -1,0 +1,173 @@
+// ============================================
+// 全局通用变量和 Mixin
+// ============================================
+
+// 品牌主色 - 自然绿
+$color-primary: #4CAF50;
+$color-primary-light: #E8F5E9;
+$color-primary-dark: #388E3C;
+$color-primary-gradient: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+
+// 辅助色
+$color-secondary: #FF9800;
+$color-secondary-light: #FFF3E0;
+$color-accent: #8BC34A;
+$color-accent-light: #F1F8E9;
+
+// 价格/促销色
+$color-price: #FF6B35;
+$color-price-light: #FFF3EF;
+
+// 功能色
+$color-success: #00B42A;
+$color-warning: #FF7D00;
+$color-error: #F53F3F;
+$color-info: #3491FA;
+
+// 背景色
+$color-bg-page: #F5F7F5;
+$color-bg-card: #FFFFFF;
+$color-bg-mask: rgba(0, 0, 0, 0.5);
+
+// 文本色
+$color-text-primary: #1D2129;
+$color-text-secondary: #4E5969;
+$color-text-tertiary: #86909C;
+$color-text-disabled: #C9CDD4;
+$color-text-white: #FFFFFF;
+
+// 边框色
+$color-border: #E5E6EB;
+$color-border-light: #F2F3F5;
+
+// 标签背景色
+$color-tag-bg: #E8F5E9;
+$color-tag-text: #4CAF50;
+$color-tag-hot-bg: #FFF3E0;
+$color-tag-hot-text: #FF7D00;
+$color-tag-new-bg: #E3F2FD;
+$color-tag-new-text: #2196F3;
+
+// 页面配置
+$page-padding: 32rpx;
+$max-content-width: 686rpx;
+
+// 间距系统
+$spacing-xs: 8rpx;
+$spacing-sm: 16rpx;
+$spacing-md: 24rpx;
+$spacing-lg: 32rpx;
+$spacing-xl: 48rpx;
+$spacing-xxl: 64rpx;
+
+// 圆角
+$radius-xs: 4rpx;
+$radius-sm: 8rpx;
+$radius-md: 12rpx;
+$radius-lg: 16rpx;
+$radius-xl: 24rpx;
+$radius-button: 48rpx;
+$radius-round: 999rpx;
+
+// 阴影
+$shadow-card: 0 2rpx 12rpx rgba(0, 0, 0, 0.08);
+$shadow-float: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+$shadow-card-hover: 0 4rpx 20rpx rgba(0, 0, 0, 0.12);
+$shadow-popup: 0 8rpx 32rpx rgba(0, 0, 0, 0.15);
+
+// 字体
+$font-size-xs: 22rpx;
+$font-size-sm: 24rpx;
+$font-size-base: 28rpx;
+$font-size-md: 30rpx;
+$font-size-lg: 34rpx;
+$font-size-xl: 40rpx;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+
+// 按钮高度
+$button-height-sm: 64rpx;
+$button-height-md: 80rpx;
+$button-height-lg: 96rpx;
+
+// 过渡动画
+$transition-base: all 0.2s ease-in-out;
+
+// ============================================
+// Mixin
+// ============================================
+
+// 文本单行截断
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 文本多行截断
+@mixin text-ellipsis-multi($lines: 2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+// 按钮样式重置
+@mixin button-reset {
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  background: transparent;
+  line-height: 1;
+
+  &::after {
+    border: none;
+  }
+}
+
+// 卡片基础样式
+@mixin card-base {
+  background-color: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  overflow: hidden;
+}
+
+// 横向滚动容器
+@mixin scroll-x-container {
+  white-space: nowrap;
+  font-size: 0;
+}
+
+// 横向滚动子项
+@mixin scroll-x-item($width) {
+  display: inline-block;
+  width: $width;
+  vertical-align: top;
+  white-space: normal;
+  font-size: 28rpx;
+}
+
+// 安全区域底部
+@mixin safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+// flex 居中
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// flex 两端对齐
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

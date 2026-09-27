@@ -1,0 +1,133 @@
+﻿@use '../../styles/variables.scss' as *;
+
+.myLandsPage {
+  min-height: 100vh;
+  background-color: $color-bg-page;
+  padding: $spacing-md $spacing-lg;
+  padding-bottom: 40rpx;
+}
+
+.landList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.landCard {
+  @include card-base;
+  overflow: hidden;
+}
+
+.landImageWrap {
+  position: relative;
+  width: 100%;
+  height: 240rpx;
+}
+
+.landImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stageBadge {
+  position: absolute;
+  top: $spacing-sm;
+  right: $spacing-sm;
+  padding: $spacing-xs $spacing-md;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: $radius-round;
+}
+
+.stageBadgeText {
+  font-size: $font-size-xs;
+  color: $color-text-white;
+  white-space: nowrap;
+}
+
+.landContent {
+  padding: $spacing-md;
+}
+
+.landName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+  @include text-ellipsis;
+}
+
+.landCrop {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-sm;
+}
+
+.landMeta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: $spacing-sm;
+  border-top: 1rpx solid $color-border-light;
+}
+
+.landMetaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.landMetaLabel {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.landMetaValue {
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+.monitorBtn {
+  padding: $spacing-xs $spacing-md;
+  background: $color-primary-gradient;
+  border-radius: $radius-round;
+  flex-shrink: 0;
+}
+
+.monitorBtnText {
+  font-size: $font-size-xs;
+  color: $color-text-white;
+  white-space: nowrap;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-xxl;
+  gap: $spacing-md;
+}
+
+.emptyIcon {
+  font-size: 80rpx;
+}
+
+.emptyText {
+  font-size: $font-size-base;
+  color: $color-text-tertiary;
+}
+
+.emptyBtn {
+  margin-top: $spacing-md;
+  padding: $spacing-sm $spacing-xl;
+  background: $color-primary-gradient;
+  border-radius: $radius-round;
+}
+
+.emptyBtnText {
+  font-size: $font-size-base;
+  color: $color-text-white;
+}

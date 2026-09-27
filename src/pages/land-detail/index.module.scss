@@ -1,0 +1,508 @@
+﻿@use '../../styles/variables.scss' as *;
+
+.landDetailPage {
+  min-height: 100vh;
+  background-color: $color-bg-page;
+  padding-bottom: 140rpx;
+}
+
+// 图片轮播
+.imageSwiper {
+  width: 100%;
+  height: 500rpx;
+}
+
+.swiperImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+// 基本信息
+.infoSection {
+  background-color: $color-bg-card;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.landName {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+}
+
+.tagRow {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-sm;
+}
+
+.landTag {
+  padding: 4rpx 16rpx;
+  border-radius: $radius-xs;
+  font-size: $font-size-xs;
+  white-space: nowrap;
+}
+
+.tagHot {
+  background-color: $color-tag-hot-bg;
+  color: $color-tag-hot-text;
+}
+
+.tagNew {
+  background-color: $color-tag-new-bg;
+  color: $color-tag-new-text;
+}
+
+.tagDefault {
+  background-color: $color-tag-bg;
+  color: $color-tag-text;
+}
+
+.locationRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-md;
+}
+
+.locationText {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  flex: 1;
+}
+
+.infoGrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  padding-top: $spacing-md;
+  border-top: 1rpx solid $color-border-light;
+}
+
+.infoItem {
+  width: calc((100% - 48rpx) / 3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.infoLabel {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.infoValue {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+}
+
+// 价格与状态
+.priceSection {
+  background-color: $color-bg-card;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.priceRow {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-md;
+}
+
+.priceValue {
+  font-size: 56rpx;
+  font-weight: $font-weight-semibold;
+  color: $color-price;
+}
+
+.priceUnit {
+  font-size: $font-size-base;
+  color: $color-text-tertiary;
+}
+
+.progressInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-xs;
+}
+
+.progressLabel {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.progressValue {
+  font-size: $font-size-sm;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+}
+
+.progressBar {
+  width: 100%;
+  height: 12rpx;
+  background-color: $color-border-light;
+  border-radius: $radius-round;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: $color-primary-gradient;
+  border-radius: $radius-round;
+  transition: width 0.3s ease;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: $spacing-xs $spacing-md;
+  background-color: $color-primary-light;
+  border-radius: $radius-round;
+  margin-top: $spacing-md;
+}
+
+.statusText {
+  font-size: $font-size-sm;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+}
+
+// 农场主信息
+.farmSection {
+  background-color: $color-bg-card;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.farmAvatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: $radius-round;
+  flex-shrink: 0;
+}
+
+.farmInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.farmName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  @include text-ellipsis;
+  margin-bottom: $spacing-xs;
+}
+
+.farmMeta {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-md;
+}
+
+.farmMetaText {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.farmArrow {
+  font-size: $font-size-lg;
+  color: $color-text-tertiary;
+}
+
+// 种植日历
+.calendarSection {
+  background-color: $color-bg-card;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.sectionTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+}
+
+.timeline {
+  position: relative;
+  padding-left: $spacing-lg;
+}
+
+.timelineLine {
+  position: absolute;
+  left: 16rpx;
+  top: 8rpx;
+  bottom: 8rpx;
+  width: 4rpx;
+  background-color: $color-border-light;
+}
+
+.timelineItem {
+  position: relative;
+  padding-bottom: $spacing-md;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.timelineDot {
+  position: absolute;
+  left: -$spacing-lg + 4rpx;
+  top: 8rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: $radius-round;
+  background-color: $color-border;
+  border: 4rpx solid $color-bg-card;
+
+  &.active {
+    background-color: $color-primary;
+    box-shadow: 0 0 0 4rpx $color-primary-light;
+  }
+
+  &.done {
+    background-color: $color-primary;
+  }
+}
+
+.timelineContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.timelineStage {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+}
+
+.timelineDesc {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+// 认养权益
+.benefitsSection {
+  background-color: $color-bg-card;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.benefitList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.benefitItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.benefitIcon {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: $radius-sm;
+  background-color: $color-primary-light;
+  @include flex-center;
+  font-size: 24rpx;
+  flex-shrink: 0;
+}
+
+.benefitText {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+}
+
+// 地块描述
+.descSection {
+  background-color: $color-bg-card;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.descText {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  line-height: 1.6;
+}
+
+// 用户评价
+.reviewSection {
+  background-color: $color-bg-card;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.reviewItem {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-sm;
+  padding: $spacing-md 0;
+  border-bottom: 1rpx solid $color-border-light;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.reviewAvatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: $radius-round;
+  flex-shrink: 0;
+}
+
+.reviewContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.reviewHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-xs;
+}
+
+.reviewName {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+}
+
+.reviewRating {
+  font-size: $font-size-xs;
+  color: $color-warning;
+}
+
+.reviewText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: 1.5;
+  margin-bottom: $spacing-xs;
+}
+
+.reviewImages {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xs;
+}
+
+.reviewImage {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: $radius-sm;
+}
+
+.reviewTime {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-top: $spacing-xs;
+}
+
+.viewAllReviews {
+  text-align: center;
+  padding: $spacing-md 0;
+  font-size: $font-size-base;
+  color: $color-primary;
+}
+
+// 底部操作栏
+.bottomBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-bg-card;
+  box-shadow: $shadow-float;
+  padding: $spacing-sm $spacing-lg;
+  padding-bottom: calc($spacing-sm + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-md;
+  z-index: 100;
+}
+
+.favBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rpx;
+  padding: $spacing-xs $spacing-sm;
+}
+
+.favIcon {
+  font-size: 40rpx;
+}
+
+.favText {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.adoptBtn {
+  flex: 1;
+  height: $button-height-lg;
+  @include flex-center;
+  border-radius: $radius-button;
+  background: $color-primary-gradient;
+  gap: $spacing-sm;
+}
+
+.adoptBtnText {
+  font-size: $font-size-md;
+  color: $color-text-white;
+  font-weight: $font-weight-semibold;
+}
+
+.adoptBtnPrice {
+  font-size: $font-size-base;
+  color: $color-text-white;
+  opacity: 0.9;
+}
+
+// 顶部悬浮按钮
+.topActions {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: $spacing-md $spacing-lg;
+  padding-top: calc($spacing-md + env(safe-area-inset-top));
+  z-index: 50;
+}
+
+.actionBtn {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: $radius-round;
+  background-color: rgba(255, 255, 255, 0.9);
+  @include flex-center;
+  font-size: 36rpx;
+  box-shadow: $shadow-card;
+}

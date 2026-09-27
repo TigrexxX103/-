@@ -1,0 +1,104 @@
+﻿@use '../../styles/variables.scss' as *;
+
+.activityCard {
+  @include card-base;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.imageWrap {
+  position: relative;
+  width: 240rpx;
+  height: 240rpx;
+  flex-shrink: 0;
+}
+
+.coverImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.priceTag {
+  position: absolute;
+  bottom: $spacing-xs;
+  right: $spacing-xs;
+  padding: 4rpx 12rpx;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: $radius-xs;
+}
+
+.priceText {
+  font-size: $font-size-xs;
+  color: $color-text-white;
+  font-weight: $font-weight-medium;
+  white-space: nowrap;
+}
+
+.content {
+  flex: 1;
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  min-width: 0;
+}
+
+.title {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.infoRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.infoIcon {
+  font-size: $font-size-xs;
+}
+
+.infoText {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  @include text-ellipsis;
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: $spacing-xs;
+}
+
+.tagList {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xs;
+}
+
+.tag {
+  padding: 2rpx 10rpx;
+  background-color: $color-tag-bg;
+  border-radius: $radius-xs;
+}
+
+.tagText {
+  font-size: $font-size-xs;
+  color: $color-tag-text;
+  white-space: nowrap;
+}
+
+.quota {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  white-space: nowrap;
+}

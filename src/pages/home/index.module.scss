@@ -1,0 +1,183 @@
+﻿@use '../../styles/variables.scss' as *;
+
+.homePage {
+  min-height: 100vh;
+  background: linear-gradient(180deg, $color-primary-light 0%, $color-bg-page 300rpx);
+  padding-bottom: 40rpx;
+}
+
+// 顶部状态栏
+.topBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-md $spacing-lg;
+  padding-top: calc($spacing-md + env(safe-area-inset-top));
+}
+
+.weatherInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.weatherText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.searchIcon {
+  font-size: 40rpx;
+  color: $color-text-primary;
+  padding: $spacing-xs;
+}
+
+// 用户欢迎语
+.welcomeSection {
+  padding: 0 $spacing-lg $spacing-md;
+}
+
+.welcomeText {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  line-height: 1.4;
+}
+
+.welcomeSubText {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-top: $spacing-xs;
+}
+
+// 快捷入口
+.quickEntry {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: $spacing-md $spacing-lg;
+  background-color: $color-bg-card;
+  margin: 0 $spacing-lg $spacing-md;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+}
+
+.quickItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.quickIcon {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: $radius-md;
+  @include flex-center;
+  font-size: 44rpx;
+}
+
+.quickIconHot {
+  background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+}
+
+.quickIconLimit {
+  background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 100%);
+}
+
+.quickIconNearby {
+  background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+}
+
+.quickIconPoints {
+  background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
+}
+
+.quickText {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+}
+
+// 轮播Banner
+.bannerSection {
+  padding: 0 $spacing-lg $spacing-md;
+}
+
+.bannerSwiper {
+  width: 100%;
+  height: 320rpx;
+  border-radius: $radius-lg;
+  overflow: hidden;
+}
+
+.bannerItem {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.bannerTitle {
+  position: absolute;
+  bottom: $spacing-md;
+  left: $spacing-md;
+  color: $color-text-white;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.3);
+}
+
+// 区块标题
+.sectionHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-md $spacing-lg $spacing-sm;
+}
+
+.sectionTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.sectionMore {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rpx;
+}
+
+// 推荐地块横向滑动
+.landScroll {
+  width: 100%;
+  padding-left: $spacing-lg;
+  @include scroll-x-container;
+}
+
+.landScrollItem {
+  width: 320rpx;
+  margin-right: $spacing-md;
+  @include scroll-x-item(320rpx);
+}
+
+// 生长日记Feed
+.diarySection {
+  padding: 0 $spacing-lg;
+}
+
+.diaryList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}

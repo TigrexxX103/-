@@ -1,0 +1,311 @@
+﻿@use '../../styles/variables.scss' as *;
+
+.confirmPage {
+  min-height: 100vh;
+  background-color: $color-bg-page;
+  padding-bottom: 160rpx;
+}
+
+// 地块信息摘要
+.landSummary {
+  @include card-base;
+  margin: $spacing-md $spacing-lg;
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-md;
+}
+
+.summaryImage {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: $radius-md;
+  flex-shrink: 0;
+}
+
+.summaryInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.summaryName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.summaryLocation {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.summaryPrice {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-price;
+}
+
+// 表单区块
+.formSection {
+  @include card-base;
+  margin: 0 $spacing-lg $spacing-md;
+  padding: $spacing-lg;
+}
+
+.formLabel {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+  display: block;
+}
+
+// 认养方案
+.periodList {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-sm;
+}
+
+.periodItem {
+  flex: 1;
+  padding: $spacing-md;
+  border: 2rpx solid $color-border;
+  border-radius: $radius-md;
+  text-align: center;
+  transition: all 0.2s ease;
+
+  &.active {
+    border-color: $color-primary;
+    background-color: $color-primary-light;
+  }
+}
+
+.periodName {
+  font-size: $font-size-base;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+.periodPrice {
+  font-size: $font-size-sm;
+  color: $color-price;
+  margin-top: 4rpx;
+}
+
+// 配送方式
+.deliveryList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.deliveryItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-md;
+  border: 2rpx solid $color-border;
+  border-radius: $radius-md;
+
+  &.active {
+    border-color: $color-primary;
+    background-color: $color-primary-light;
+  }
+}
+
+.deliveryInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.deliveryName {
+  font-size: $font-size-base;
+  color: $color-text-primary;
+}
+
+.deliveryDesc {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.deliveryRadio {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: $radius-round;
+  border: 4rpx solid $color-border;
+  @include flex-center;
+
+  &.active {
+    border-color: $color-primary;
+    background-color: $color-primary;
+  }
+}
+
+.radioDot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: $radius-round;
+  background-color: $color-text-white;
+}
+
+// 寄语输入
+.messageInput {
+  width: 100%;
+  height: 160rpx;
+  padding: $spacing-sm;
+  border: 2rpx solid $color-border;
+  border-radius: $radius-md;
+  font-size: $font-size-base;
+  color: $color-text-primary;
+  background-color: $color-bg-page;
+}
+
+.inputHint {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  text-align: right;
+  margin-top: $spacing-xs;
+}
+
+// 协议
+.agreementRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+}
+
+.checkbox {
+  width: 36rpx;
+  height: 36rpx;
+  border: 3rpx solid $color-border;
+  border-radius: $radius-xs;
+  @include flex-center;
+  margin-top: 4rpx;
+  flex-shrink: 0;
+
+  &.checked {
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+}
+
+.checkboxText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: 1.5;
+
+  .agreementLink {
+    color: $color-primary;
+  }
+}
+
+// 价格汇总
+.priceSummary {
+  @include card-base;
+  margin: 0 $spacing-lg $spacing-md;
+  padding: $spacing-lg;
+}
+
+.priceRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-xs 0;
+}
+
+.priceLabel {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+}
+
+.priceValue {
+  font-size: $font-size-base;
+  color: $color-text-primary;
+}
+
+.priceTotal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: $spacing-md;
+  margin-top: $spacing-xs;
+  border-top: 1rpx solid $color-border-light;
+}
+
+.priceTotalLabel {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.priceTotalValue {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-price;
+}
+
+// 底部支付栏
+.payBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-bg-card;
+  box-shadow: $shadow-float;
+  padding: $spacing-sm $spacing-lg;
+  padding-bottom: calc($spacing-sm + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacing-md;
+  z-index: 100;
+}
+
+.payInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.payLabel {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.payAmount {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-price;
+}
+
+.payBtn {
+  flex: 1;
+  height: $button-height-lg;
+  @include flex-center;
+  border-radius: $radius-button;
+  background: $color-primary-gradient;
+  transition: all 0.2s ease;
+
+  &.disabled {
+    background: $color-border;
+    opacity: 0.6;
+  }
+}
+
+.payBtnText {
+  font-size: $font-size-md;
+  color: $color-text-white;
+  font-weight: $font-weight-semibold;
+}
